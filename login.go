@@ -17,8 +17,8 @@ func RandomLogin() (*Login, error) {
 }
 
 // Returns multiple random login credentials.
-func MultiRandomLogin(results int) ([]Login, error) {
-	url := API + fmt.Sprintf("&results=%d", results)
+func MultiRandomLogin(count int) ([]Login, error) {
+	url := API + fmt.Sprintf("&results=%d", count)
 	response, err := JSONResponse(url)
 	if err != nil {
 		return nil, err

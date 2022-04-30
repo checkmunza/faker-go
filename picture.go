@@ -17,8 +17,8 @@ func RandomPicture() (*Picture, error) {
 }
 
 // Returns multiple random pictures.
-func MultiRandomPicture(results int) ([]Picture, error) {
-	url := API + fmt.Sprintf("&results=%d", results)
+func MultiRandomPicture(count int) ([]Picture, error) {
+	url := API + fmt.Sprintf("&results=%d", count)
 	response, err := JSONResponse(url)
 	if err != nil {
 		return nil, err

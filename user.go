@@ -18,8 +18,8 @@ func RandomUser() (*User, error) {
 }
 
 // Returns multiple random users data.
-func MultiRandomUser(results int) ([]User, error) {
-	url := API + fmt.Sprintf("&inc=gender,name,email,dob,phone,cell&results=%d", results)
+func MultiRandomUser(count int) ([]User, error) {
+	url := API + fmt.Sprintf("&inc=gender,name,email,dob,phone,cell&results=%d", count)
 	response, err := JSONResponse(url)
 	if err != nil {
 		return nil, err
@@ -42,8 +42,8 @@ func RandomMaleUser() (*User, error) {
 }
 
 // Returns multiple random male users data.
-func MultiRandomMaleUser(results int) ([]User, error) {
-	url := API + fmt.Sprintf("&inc=gender,name,email,dob,phone,cell&gender=male&results=%d", results)
+func MultiRandomMaleUser(count int) ([]User, error) {
+	url := API + fmt.Sprintf("&inc=gender,name,email,dob,phone,cell&gender=male&results=%d", count)
 	response, err := JSONResponse(url)
 	if err != nil {
 		return nil, err
@@ -66,8 +66,8 @@ func RandomFemaleUser() (*User, error) {
 }
 
 // Returns multiple random female users data.
-func MultiRandomFemaleUser(results int) ([]User, error) {
-	url := API + fmt.Sprintf("&inc=gender,name,email,dob,phone,cell&gender=female&results=%d", results)
+func MultiRandomFemaleUser(count int) ([]User, error) {
+	url := API + fmt.Sprintf("&inc=gender,name,email,dob,phone,cell&gender=female&results=%d", count)
 	response, err := JSONResponse(url)
 	if err != nil {
 		return nil, err

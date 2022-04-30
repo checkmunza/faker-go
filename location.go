@@ -17,8 +17,8 @@ func RandomLocation() (*Location, error) {
 }
 
 // Returns multiple random locations.
-func MultiRandomLocation(results int) ([]Location, error) {
-	url := API + fmt.Sprintf("&results=%d", results)
+func MultiRandomLocation(count int) ([]Location, error) {
+	url := API + fmt.Sprintf("&results=%d", count)
 	response, err := JSONResponse(url)
 	if err != nil {
 		return nil, err
