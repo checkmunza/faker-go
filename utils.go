@@ -7,32 +7,32 @@ import (
 
 const API = "https://randomuser.me/api?noinfo"
 
-type Nationality int
+type Nationality string
 
 // Enum for nationalities.
 const (
-	AU Nationality = iota
-	BR
-	CA
-	CH
-	DE
-	DK
-	ES
-	FI
-	FR
-	GB
-	IE
-	IR
-	NO
-	NL
-	NZ
-	TR
-	US
+	AU Nationality = "AU"
+	BR Nationality = "BR"
+	CA Nationality = "CA"
+	CH Nationality = "CH"
+	DE Nationality = "DE"
+	DK Nationality = "DK"
+	ES Nationality = "ES"
+	FI Nationality = "FI"
+	FR Nationality = "FR"
+	GB Nationality = "GB"
+	IE Nationality = "IE"
+	IR Nationality = "IR"
+	NO Nationality = "NO"
+	NL Nationality = "NL"
+	NZ Nationality = "NZ"
+	TR Nationality = "TR"
+	US Nationality = "US"
 )
 
 // Returns value of enum type.
 func (n Nationality) Value() string {
-	return [...]string{"AU", "BR", "CA", "CH", "DE", "DK", "ES", "FI", "FR", "GB", "IE", "IR", "NO", "NL", "NZ", "TR", "US"}[n]
+	return string(n)
 }
 
 // Returns the JSON response fetched from an API.
