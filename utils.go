@@ -7,6 +7,34 @@ import (
 
 const API = "https://randomuser.me/api?noinfo"
 
+type Nationality int
+
+// Enum for nationalities.
+const (
+	AU Nationality = iota
+	BR
+	CA
+	CH
+	DE
+	DK
+	ES
+	FI
+	FR
+	GB
+	IE
+	IR
+	NO
+	NL
+	NZ
+	TR
+	US
+)
+
+// Returns value of enum type.
+func (n Nationality) Value() string {
+	return [...]string{"AU", "BR", "CA", "CH", "DE", "DK", "ES", "FI", "FR", "GB", "IE", "IR", "NO", "NL", "NZ", "TR", "US"}[n]
+}
+
 // Returns the JSON response fetched from an API.
 func JSONResponse(url string) ([]byte, error) {
 	client := &http.Client{}
@@ -24,4 +52,15 @@ func JSONResponse(url string) ([]byte, error) {
 		return nil, err
 	}
 	return body, nil
+}
+
+func NatString(nationality []Nationality) string {
+	var nat string
+	for index, data := range nationality {
+		nat += data.Value()
+		if index != len(nationality)-1 {
+			nat += ","
+		}
+	}
+	return nat
 }

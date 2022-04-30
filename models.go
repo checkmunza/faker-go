@@ -1,7 +1,6 @@
 package faker
 
 import (
-	"net/url"
 	"time"
 )
 
@@ -17,19 +16,20 @@ type DOB struct {
 }
 
 type Picture struct {
-	Large     url.URL `json:"large"`
-	Medium    url.URL `json:"medium"`
-	Thumbnail url.URL `json:"thumbnail"`
+	Large     string `json:"large"`
+	Medium    string `json:"medium"`
+	Thumbnail string `json:"thumbnail"`
 }
 
 type User struct {
-	Gender  string  `json:"gender"`
-	Name    Name    `json:"name"`
-	Email   string  `json:"email"`
-	DOB     DOB     `json:"dob"`
-	Phone   string  `json:"phone"`
-	Cell    string  `json:"cell"`
-	Picture Picture `json:"picture"`
+	Gender      string  `json:"gender"`
+	Name        Name    `json:"name"`
+	Email       string  `json:"email"`
+	DOB         DOB     `json:"dob"`
+	Phone       string  `json:"phone"`
+	Cell        string  `json:"cell"`
+	Picture     Picture `json:"picture"`
+	Nationality string  `json:"nat"`
 }
 
 type Coordinates struct {
